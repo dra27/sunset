@@ -1,0 +1,23 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: 4.14.0
+          opam-repositories: |
+            opam-repository-mingw: https://github.com/dra27/opam-repository.git#sunset
+            default: https://github.com/ocaml/opam-repository.git
+
+      - run: |
+          opam list
+          opam exec -- ocamlopt -config
