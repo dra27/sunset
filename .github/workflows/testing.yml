@@ -36,4 +36,4 @@ jobs:
       - run: |
           git -C D:\opam-repo merge origin/master
           opam update
-          opam upgrade
+          opam upgrade ocaml-config --unlock-base
