@@ -36,6 +36,7 @@ jobs:
           opam exec -- git config --list
 
       - run: |
+          git config --global core.autocrlf input
           git -C D:\opam-repo merge d705cce59b17
 
       - run: |
