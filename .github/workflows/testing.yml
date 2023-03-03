@@ -39,3 +39,4 @@ jobs:
           opam exec -- md5sum D:/opam-repo/packages/ocaml-config/ocaml-config.3/files/gen_ocaml_config.ml.in
           opam update
           opam upgrade ocaml-config --unlock-base
+          opam switch create foo --packages ocaml-variants.4.14.0+mingw64c
