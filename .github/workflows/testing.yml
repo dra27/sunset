@@ -13,6 +13,8 @@ jobs:
       - run: |
           git config core.autocrlf
           git config --global core.autocrlf || true
+          git clone https://github.com/ocaml/opam-repository.git D:\opam-repo
+          git -C D:\opam-repo checkout -b sunset ce6f3a1937eb3be
 
       - name: Set-up OCaml
         uses: dra27/setup-ocaml@38e5927a2226c5c763f05124b643efa7f5fd1c15
@@ -20,7 +22,7 @@ jobs:
           ocaml-compiler: 4.14.0
           opam-repositories: |
             opam-repository-mingw: https://github.com/dra27/opam-repository-mingw.git#sunset
-            default: https://github.com/ocaml/opam-repository.git
+            default: git+file://D:\\opam-repo#sunset
 
       - run: |
           git config core.autocrlf
