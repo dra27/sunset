@@ -14,10 +14,10 @@ jobs:
           git config core.autocrlf
           git config --global core.autocrlf || true
           git clone https://github.com/ocaml/opam-repository.git D:\opam-repo
-          git -C D:\opam-repo checkout -b sunset ce6f3a1937eb3be
+          git -C D:\opam-repo checkout -b sunset origin/master
 
       - name: Set-up OCaml
-        uses: dra27/setup-ocaml@38e5927a2226c5c763f05124b643efa7f5fd1c15
+        uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: 4.14.0
           opam-repositories: |
