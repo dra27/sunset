@@ -13,10 +13,9 @@ jobs:
       - run: |
           git config core.autocrlf
           git config --global core.autocrlf || true
-          git config --global core.autocrlf false
 
       - name: Set-up OCaml
-        uses: dra27/setup-ocaml@bf36ff0b214f6d322f41b9a4bb5d6a81e798a638
+        uses: dra27/setup-ocaml@38e5927a2226c5c763f05124b643efa7f5fd1c15
         with:
           ocaml-compiler: 4.14.0
           opam-repositories: |
