@@ -17,8 +17,7 @@ jobs:
           git -C D:\opam-repo checkout -b sunset ce6f3a1937eb3be
 
       - name: Set-up OCaml
-#        uses: dra27/setup-ocaml@38e5927a2226c5c763f05124b643efa7f5fd1c15
-        uses: dra27/setup-ocaml@38e5927a2226c5c763f05124b643efa7f5fd1c15
+        uses: dra27/setup-ocaml@fa99651fdf68f8b789bcad654285d8fe4f251b43
         with:
           ocaml-compiler: 4.14.0
           opam-repositories: |
