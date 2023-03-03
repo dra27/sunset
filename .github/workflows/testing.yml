@@ -10,13 +10,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - run: |
+          git config core.autocrlf
+          git config --global core.autocrlf || true
+
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v2
+        uses: dra27/setup-ocaml@bf36ff0b214f6d322f41b9a4bb5d6a81e798a638
         with:
           ocaml-compiler: 4.14.0
           opam-repositories: |
             opam-repository-mingw: https://github.com/dra27/opam-repository-mingw.git#sunset
             default: https://github.com/ocaml/opam-repository.git
+
+      - run: |
+          git config core.autocrlf
+          git config --global core.autocrlf || true
 
       - run: |
           opam list
