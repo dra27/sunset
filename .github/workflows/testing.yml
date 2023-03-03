@@ -22,7 +22,7 @@ jobs:
           ocaml-compiler: 4.14.0
           opam-repositories: |
             opam-repository-mingw: https://github.com/dra27/opam-repository-mingw.git#sunset
-            default: git+file://D:\\opam-repo#sunset
+            default: D:/opam-repo#sunset
 
       - run: |
           git config core.autocrlf
