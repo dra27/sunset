@@ -32,3 +32,8 @@ jobs:
           opam list
           opam repo
           opam exec -- ocamlopt -config
+
+      - run: |
+          git -C D:\opam-repo merge origin/master
+          opam update
+          opam upgrade
