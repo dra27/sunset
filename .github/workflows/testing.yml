@@ -32,6 +32,8 @@ jobs:
           opam list
           opam repo
           opam exec -- ocamlopt -config
+          opam exec -- which git
+          opam exec -- git config --list
 
       - run: |
           git -C D:\opam-repo merge origin/master
@@ -39,5 +41,6 @@ jobs:
           opam update
           opam exec -- md5sum D:/.opam/repo/default/packages/ocaml-config/ocaml-config.3/files/gen_ocaml_config.ml.in
           git -C D:\.opam\repo\default config -l
+          opam exec -- git -C D:/.opam/repo/default config -l
           opam upgrade ocaml-config --unlock-base
           opam switch create foo --packages ocaml-variants.4.14.0+mingw64c
